@@ -2,7 +2,9 @@
 title: "Test 2 Final"
 author: "Brandon Taylor"
 date: "6/26/2020"
-output: pdf_document
+output:
+  word_document: default
+  pdf_document: default
 ---
 ```{r}
 ```
@@ -13,7 +15,7 @@ remove(list = ls())
 ```
 2. Load the “inequality” dataset into R, and save the data frame as ‘inequality_data’.
 ```{r}
-setwd("/Users/brandontaylor/Documents/TEST2")
+
 library(rio)
 inequality_data <- import("inequality.xlsx")
 attach(inequality_data)
@@ -25,18 +27,20 @@ head(inequality_data)
 summary(inequality_data)
 ```
 4. Using the subset command, provide the inequality_gini scores for Denmark and Sweden.
-
-```{r}
-
 library(dplyr)
 inequality_datasub <- subset(inequality_gini,
                           select = c("Denmark", "Sweden"))
+
+```{r}
+
+
 ```
 
 5. Since Brazil started the Bolsa Familia conditional cash transfer program in 1990s, inequality in Brazil has decreased significantly. Just the same, inequality in Brazil is very high comparatively. Using the subset command, please show the inequality_gini score for Brazil.
 
-```{r}
 inequality_data <- subset(inequality_gini, "Brazil")
+```{r}
+
 ```
 
 6. Given your answers to the previous questions, is it better to have a high or low inequality_gini scores?
@@ -113,12 +117,17 @@ mobphone
 ```
 
 22. Label your variables in merged_df. Any labels will suffice.
-```{r}
 library(labelled)
+```{r}
+
 
 ```
 23. Save the labeled data frame as a Stata dataset called final_data.
-```{r}
+
 export(merged_df, file = "final_dtat.dta")
+```{r}
+
 ```
 24. Save all of the files (i.e. .Rmd, .dta, .xlsx, .pdf/Word Doc), push them to your GitHub repo, and provide us with the link to that repo.
+
+https://github.com/brantaylor1595/datascienceclass2
